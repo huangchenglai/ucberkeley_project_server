@@ -14,6 +14,7 @@ from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 
+
 import time, datetime,random,sys, math
 from itertools import product
 from pprint import pprint
@@ -26,5 +27,6 @@ import simplejson
 
 def home(request):
     html = "<html><body><h2>You are viewing the Home Page</h2>It is now %s.</body></html>" % datetime.datetime.now()
-    return HttpResponse(html)
-    #return render_to_response('home.html')
+    #return HttpResponse(html)
+    return render_to_response('/templates/home.html')
+    #not sure why this isn't working
