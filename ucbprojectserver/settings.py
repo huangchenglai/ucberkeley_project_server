@@ -1,14 +1,10 @@
-import os.path
+import os
+PROJECT_PATH = os.path.abspath(os.path.split(__file__)[0])
 
 # Django settings for ucbprojectserver project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-
-TEMPLATE_DIRS = (
-    os.path.join(os.path.basename(__file__), 'templates'),
-)
-
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -112,6 +108,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    PROJECT_PATH + "/templates"
 )
 
 INSTALLED_APPS = (
